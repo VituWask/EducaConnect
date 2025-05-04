@@ -1,0 +1,40 @@
+.demo-button-container {
+  display: flex;
+  gap: 10px;
+  padding-bottom: 16px;
+}
+
+.demo-button-container button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none; /* Não precisa porque mat-raised já tem borda */
+  border-radius: 8px;
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra suave */
+}
+
+.demo-button-container button:hover {
+  background-color: #45a049;
+  transform: translateY(-2px); /* Efeito de levantar */
+}
+
+.demo-button-container button:disabled {
+  background-color: #9e9e9e; /* Botão desativado cinza */
+  cursor: not-allowed;
+}
+
+
+.nota-alta {
+  font-weight: bold;
+  color: green;
+  font-size: 1.2em;
+}
+
+.nota-baixa {
+  font-weight: bold;
+  color: red;
+  font-size: 1.2em;
+}

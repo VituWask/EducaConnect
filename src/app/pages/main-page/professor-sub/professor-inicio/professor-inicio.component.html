@@ -1,0 +1,20 @@
+<div class="painel">
+  <nav mat-tab-nav-bar>
+    <a
+      mat-tab-link
+      *ngFor="let tab of asyncTabs | async"
+      [routerLink]="tab.route"
+      routerLinkActive
+      #rla="routerLinkActive"
+      [active]="rla.isActive"
+    >
+      {{ tab.label }}
+    </a>
+  </nav>
+
+  <div class="conteudo-fixo">
+    <div class="conteudo-wrapper">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

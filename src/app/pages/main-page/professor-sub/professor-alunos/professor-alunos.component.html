@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Tabela com Expansão</title>
+</head>
+
+<body>
+  <table mat-table
+         [dataSource]="dataSource"
+         multiTemplateDataRows
+         class="mat-elevation-z8">
+
+    <!-- Colunas padrão com destaque para nota -->
+    <ng-container matColumnDef="{{column}}" *ngFor="let column of columnsToDisplay">
+      <th mat-header-cell *matHeaderCellDef> {{ column }} </th>
+      <td mat-cell *matCellDef="let element">
+        <span *ngIf="column === 'nota'" [ngClass]="+element[column] >= 6 ? 'nota-alta' : 'nota-baixa'">
+          {{ element[column] }}
+        </span>
+        <span *ngIf="column !== 'nota'">
+          {{ element[column] }}
+        </span>
+      </td>
+    </ng-container>
+
+    <!-- Botão de expandir -->
+    <ng-container matColumnDef="expand">
+      <th mat-header-cell *matHeaderCellDef aria-label="row actions">&nbsp;</th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-icon-button
+                aria-label="expand row"
+                class="expand-toggle-btn"
+                [class.expanded]="expandedElement === element"
+                (click)="(expandedElement = expandedElement === element ? null : element); $event.stopPropagation()">
+          <mat-icon>keyboard_arrow_down</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <!-- Linha expandida -->
+    <ng-container matColumnDef="expandedDetail">
+      <td mat-cell *matCellDef="let element" [attr.colspan]="columnsToDisplayWithExpand.length">
+        <div class="example-element-detail"
+             [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
+          <div class="example-element-diagram">
+            <div class="example-element-situacao"> {{ element.situacao }} </div>
+            <div class="example-element-nota"> {{ element.nota }} </div>
+            <div class="example-element-nome"> {{ element.nome }} </div>
+            <div class="example-element-turma"> {{ element.turma }} </div>
+          </div>
+          <div class="example-element-description">
+            {{ element.description }}
+            <span class="example-element-description-attribution"> </span>
+          </div>
+        </div>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="columnsToDisplayWithExpand"></tr>
+    <tr mat-row *matRowDef="let element; columns: columnsToDisplayWithExpand;"
+        class="example-element-row"
+        [class.example-expanded-row]="expandedElement === element"
+        (click)="expandedElement = expandedElement === element ? null : element">
+    </tr>
+    <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
+  </table>
+</body>
+
+</html>

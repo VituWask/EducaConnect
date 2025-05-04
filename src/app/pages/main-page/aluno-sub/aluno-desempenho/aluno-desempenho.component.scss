@@ -1,0 +1,38 @@
+/* Estilo para a tabela */
+table {
+  width: auto;
+  height: auto; /* ALTURA */
+  border-collapse: collapse; /* Colapsa as bordas para garantir bordas contínuas */
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 2px solid #333; /* Bordas completas para todas as células */
+}
+
+/* Bordas para o cabeçalho */
+th {
+  border-bottom: 3px solid #666; /* Bordas mais espessas no cabeçalho */
+}
+
+/* Bordas para as células de dados */
+td {
+  border-bottom: 2px solid #ddd; /* Bordas mais suaves para as células de dados */
+}
+
+/* Estilo geral para o container */
+html {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 800px;
+  height: 600px; /* ALTURA */
+  background-color: white;
+  border: 2px solid #ccc; /* Cinza mais suave */
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<form class="example-form">
+  <mat-form-field class="example-full-width">
+    <mat-label>Sede (disabled)</mat-label>
+    <input matInput disabled value="EducaConnect">
+  </mat-form-field>
+
+  <table class="example-full-width" cellspacing="0"><tr>
+    <td><mat-form-field class="example-full-width">
+      <mat-label>Primeiro Nome</mat-label>
+      <input matInput>
+    </mat-form-field></td>
+    <td><mat-form-field class="example-full-width">
+      <mat-label>Ultimo Nome</mat-label>
+      <input matInput>
+    </mat-form-field></td>
+  </tr></table>
+
+  <p>
+    <mat-form-field class="example-full-width">
+      <mat-label>Motivo</mat-label>
+      <textarea matInput placeholder="Maximo de 10 linhas"></textarea>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>E-mail</mat-label>
+      <textarea matInput></textarea>
+    </mat-form-field>
+  </p>
+
+  <table class="example-full-width" cellspacing="0"><tr>
+    <td><mat-form-field class="example-full-width">
+      <mat-label>Cidade</mat-label>
+      <input matInput placeholder="Ex. Manaus">
+    </mat-form-field></td>
+    <td><mat-form-field class="example-full-width">
+      <mat-label>Estado</mat-label>
+      <input matInput placeholder="Ex. Amazonas">
+    </mat-form-field></td>
+    <td><mat-form-field class="example-full-width">
+      <mat-label>CEP</mat-label>
+      <input matInput #postalCode maxlength="9" placeholder="Ex. *****-***" value="12345-678">
+      <mat-hint align="end">{{postalCode.value.length}} / 9</mat-hint>
+    </mat-form-field></td>
+  </tr></table>
+</form>
+
+<!-- Container para a imagem, sem campo de texto ao lado -->
+<div class="image-container">
+  <img
+    src="../../../../../assets/images/person/person.jpg"
+    alt="Imagem"
+  />
+</div>
+
+</html>

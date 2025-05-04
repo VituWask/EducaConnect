@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+  <mat-stepper headerPosition="bottom" #stepper>
+    <!-- Etapa 1: Digitar o nome -->
+    <mat-step [stepControl]="firstFormGroup">
+      <form [formGroup]="firstFormGroup">
+        <ng-template matStepLabel>Digite seu nome</ng-template>
+        <mat-form-field appearance="fill" class="input-field">
+          <mat-label>Primeiro e Último nome</mat-label>
+          <input matInput placeholder="Exemplo: João Silva" formControlName="firstCtrl" required>
+        </mat-form-field>
+        <div class="button-container">
+          <button mat-raised-button color="primary" class="step-btn" matStepperNext>Próximo</button>
+        </div>
+      </form>
+    </mat-step>
+
+    <!-- Etapa 2: Digitar o remetente -->
+    <mat-step [stepControl]="secondFormGroup" optional>
+      <form [formGroup]="secondFormGroup">
+        <ng-template matStepLabel>Digite seu remetente</ng-template>
+        <mat-form-field appearance="fill" class="input-field">
+          <mat-label>Remetente</mat-label>
+          <input matInput placeholder="Exemplo: Maria Oliveira" formControlName="secondCtrl" required>
+        </mat-form-field>
+        <div class="button-container">
+          <button mat-stroked-button color="primary" class="step-btn" matStepperPrevious>Voltar</button>
+          <button mat-raised-button color="primary" class="step-btn" matStepperNext>Próximo</button>
+        </div>
+      </form>
+    </mat-step>
+
+    <!-- Etapa final: Confirmação -->
+    <mat-step>
+      <ng-template matStepLabel>Feito</ng-template>
+      <div class="confirmation-container">
+        <mat-icon class="confirmation-icon" color="primary">check_circle</mat-icon>
+        <h2 class="confirmation-title">Solicitação enviada com sucesso!</h2>
+        <p class="confirmation-message">Sua solicitação foi processada. Você pode voltar para revisar ou refazer.</p>
+        <div class="step-buttons">
+          <button mat-stroked-button color="primary" class="step-btn" matStepperPrevious>Voltar</button>
+          <button mat-raised-button color="accent" class="step-btn" (click)="stepper.reset()">Refazer</button>
+        </div>
+      </div>
+    </mat-step>
+
+  </mat-stepper>
+
+</html>

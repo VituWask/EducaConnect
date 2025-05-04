@@ -1,0 +1,118 @@
+.nota-alta {
+  font-weight: bold;
+  color: green;
+  font-size: 1.1em;
+}
+
+.nota-baixa {
+  font-weight: bold;
+  color: red;
+  font-size: 1.1em;
+}
+
+/* Estilo para a tabela */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+tr.example-detail-row {
+  height: 0;
+}
+
+tr.example-element-row:not(.example-expanded-row):hover {
+  background: whitesmoke;
+}
+
+tr.example-element-row:not(.example-expanded-row):active {
+  background: #efefef;
+}
+
+.example-element-row td {
+  border-bottom-width: 0;
+}
+
+/* Estilo para a área expandida */
+.example-element-detail {
+  overflow: hidden;
+  display: flex;
+}
+
+.example-element-diagram {
+  min-width: 80px;
+  border: 2px solid black;
+  padding: 8px;
+  font-weight: lighter;
+  margin: 8px 0;
+  height: 104px;
+}
+
+.example-element-symbol {
+  font-weight: bold;
+  font-size: 40px;
+  line-height: normal;
+}
+
+.example-element-description {
+  padding: 16px;
+}
+
+.example-element-description-attribution {
+  opacity: 0.5;
+}
+
+/* Estilo para as notas */
+.nota-alta {
+  font-weight: bold;
+  color: green;
+  font-size: 1.1em;
+}
+
+.nota-baixa {
+  font-weight: bold;
+  color: red;
+  font-size: 1.1em;
+}
+
+/* Destacar a nota dentro da área expandida */
+.example-element-nota {
+  font-size: 24px;
+  font-weight: bold;
+  color: #1976d2; /* Azul típico do Angular Material */
+}
+
+/* Estilo para o botão de expandir */
+.expand-toggle-btn {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.expand-toggle-btn:hover {
+  background-color: #45a049;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.expand-toggle-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(76, 175, 80, 0.4);
+}
+
+.expand-toggle-btn .mat-icon {
+  color: white; /* Deixa o ícone branco para combinar */
+  font-size: 24px;
+  transition: transform 0.3s ease;
+}
+
+/* Se quiser girar o ícone quando expandido */
+.expand-toggle-btn.expanded .mat-icon {
+  transform: rotate(180deg);
+}

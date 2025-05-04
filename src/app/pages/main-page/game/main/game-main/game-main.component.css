@@ -1,0 +1,39 @@
+html {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 80vw;
+  height: auto;
+  background-color: white;
+  border: 2px solid #ccc; /* Cinza mais suave */
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px; /* Reduzi o espaço entre imagens */
+  padding: 16px; /* Reduzi também o padding geral */
+}
+
+.image-grid a {
+  display: block;
+  text-align: center;
+}
+
+.image-grid img {
+  width: 75%; /* Diminuí o tamanho da imagem */
+  height: auto;
+  max-height: 23dvh;
+  min-height: 23dvh;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.image-grid img:hover {
+  transform: scale(1.05);
+}

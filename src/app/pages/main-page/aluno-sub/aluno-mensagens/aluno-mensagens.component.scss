@@ -1,0 +1,95 @@
+html {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 80vw;
+  height: 80vh; /* ALTURA */
+  background-color: white;
+  border: 2px solid #ccc; /* Cinza mais suave */
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra mais suave */
+  text-align: center;
+}
+
+.mat-stepper-horizontal {
+  margin-top: 8px;
+}
+
+.mat-mdc-form-field {
+  margin-top: 16px;
+}
+
+.input-field {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.step-btn {
+  font-weight: 600;
+  padding: 10px 24px;
+  border-radius: 12px; /* Botões com bordas mais arredondadas */
+  font-size: 16px;
+  text-transform: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  margin-right: 8px;
+  transition: all 0.3s ease;
+  background-color: #3f51b5;
+  color: white;
+}
+
+.step-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.mat-step {
+  background-color: #f7f7f7; /* Cinza suave para cada etapa */
+  border-radius: 12px; /* Arredondar as bordas das etapas */
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Suavizar a sombra da etapa */
+}
+
+.confirmation-container {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #f7f7f7;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+.confirmation-icon {
+  font-size: 64px;
+  color: #4caf50;
+  margin-bottom: 16px;
+}
+
+.confirmation-title {
+  font-size: 24px;
+  margin-bottom: 8px;
+  color: #2e7d32;
+}
+
+.confirmation-message {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 32px;
+}
+
+.step-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.step-buttons button {
+  font-weight: 500;
+}

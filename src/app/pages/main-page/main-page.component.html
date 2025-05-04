@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>EducaConnect</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <button id="toggle-sidebar">☰</button>
+
+  <div class="sidebar">
+    <a routerLink="/main/inicio" (click)="closeSidebar()"><h2>EducaConnect</h2></a>
+    <ul>
+      <li><a routerLink="/main/agenda" (click)="closeSidebar()">AGENDA</a></li>
+      <li><a routerLink="/main/desempenho" (click)="closeSidebar()">DESEMPENHO</a></li>
+      <li><a routerLink="/main/rendimento" (click)="closeSidebar()">RENDIMENTO</a></li>
+      <li><a routerLink="/main/mensagens" (click)="closeSidebar()">MENSAGENS</a></li>
+      <li><a routerLink="/main/game-main" (click)="closeSidebar()">JOGOS</a></li>
+    </ul>
+  </div>
+
+  <div class="content" id="main-content">
+
+    <div class="topbar">
+      <div class="topbar-left">
+        <a class="painel-professor" routerLink="/main/professor/perfil">
+          <p>Painel do Professor</p>
+        </a>
+      </div>
+      <div class="topbar-center">
+        <p>Aluno: Marcos Vital de Melo</p>
+        <p>RA: 2134424</p>
+      </div>
+      <div class="topbar-right">
+        <a class="profile" routerLink="">Perfil</a>
+      </div>
+    </div>
+
+    <div class="item-content">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+
+</body>
+</html>

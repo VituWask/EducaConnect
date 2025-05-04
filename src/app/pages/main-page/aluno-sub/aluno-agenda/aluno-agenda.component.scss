@@ -1,0 +1,56 @@
+body {
+  display: flex;
+  justify-content: center; /* centraliza horizontalmente */
+  align-items: center;     /* centraliza verticalmente */
+  height: 100vh;           /* altura total da viewport */
+  margin: 0;               /* remove margens padrão */
+}
+
+html {
+  display: flex; /* ORGANIZA OS ELEMENTOS EM UM FLEX CONTAINER */
+  flex-direction: column; /* DISTRIBUI OS ELEMENTOS NA VERTICAL */
+  align-items: center; /* CENTRALIZA NO EIXO HORIZONTAL (X) */
+  justify-content: center; /* CENTRALIZA NO EIXO VERTICAL (Y) */
+  width: 80vw;
+  height: 80vh; /* ALTURA */
+  background-color: white;
+  border: 2px solid #ccc; /* Cinza mais suave */
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.agenda-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.agenda-img {
+  width: 80vw;
+  height: 60vh; /* ALTURA */
+  margin-bottom: 20px;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+}
+
+.button-group button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.button-group button:hover {
+  background-color: #45a049;
+}

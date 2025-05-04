@@ -1,0 +1,91 @@
+html {
+  margin-top: 7px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 800px;
+  height: 800px;
+  background-color: white;
+  border: 2px solid #ccc; /* Cinza mais suave */
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+  height: 100vh;
+}
+
+.item-content2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 30px;
+  width: auto;
+  height: auto; /* ALTURA */
+  background-color: white;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  margin-top: 20px;
+  overflow: hidden; /* Garante que o conteúdo não ultrapasse o contêiner */
+}
+
+h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.chart-container {
+  width: 100%;
+  max-width: 800px;
+  height: 300px;
+  margin-bottom: 30px;
+}
+
+#feedback {
+  margin-top: 20px;
+  font-size: 1.1rem;
+  color: #444;
+}
+
+.recomendacoes {
+  margin-top: 30px;
+  width: 100%;
+  max-width: 800px;
+}
+
+.recomendacoes h4 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+#recommendation-list {
+  list-style-type: none;
+  padding: 0;
+  font-size: 1rem;
+  color: #555;
+}
+
+#recommendation-list li {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+}
+
+#recommendation-list li:hover {
+  background-color: #eaeaea;
+}
+
+#recommendation-list li:last-child {
+  margin-bottom: 0;
+}

@@ -1,0 +1,34 @@
+.painel {
+
+  width: 1000px;
+  margin: 30px auto;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Já está definido: */
+nav[mat-tab-nav-bar] {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  background-color: aliceblue;
+}
+
+/* Aqui ajustamos o container do conteúdo */
+.conteudo-fixo {
+  height: 500px;
+  padding: 16px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Este wrapper ajuda a ocupar o espaço */
+.conteudo-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}

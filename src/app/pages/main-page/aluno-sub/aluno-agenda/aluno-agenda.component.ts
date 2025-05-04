@@ -27,7 +27,7 @@ export class AlunoAgendaComponent {
   currentMonthIndex: number = 4; // Começa em Dezembro
 
   get currentMonthImage(): string {
-    return `../../../../../assets/images/agenda/${this.months[this.currentMonthIndex]}.svg`;
+    return `assets/images/agenda/${this.months[this.currentMonthIndex]}.svg`;
   }
 
   nextMonth(): void {

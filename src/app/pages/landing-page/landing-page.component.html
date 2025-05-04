@@ -1,420 +1,478 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+    <head>
 
+        <title>EducaConnect</title>
+
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
 
-        <!--Script das Figuras-->
         <script src="https://kit.fontawesome.com/c49e0b56e6.js" crossorigin="anonymous"></script>
+    </head>
 
-<body>
-  <!--Titulo do site-->
+    <body>
 
-  <header>
-      <div class="opacity"></div>
-      <div class="container">
+        <header>
+            <div class="opacity"></div>
+            <div class="container">
 
-          <div class="menu">
+                <div class="menu">
 
-              <div class="logo">
-                  <a href="index.html">
-                      <h1>EducaConnect</h1>
-                  </a>
-              </div><!--logo-->
+                    <div class="logo">
+                        <a href="index.html">
+                            <h1>EducaConnect</h1>
+                        </a>
+                    </div>
 
-              <!--menu desktop-->
-              <nav class="menu_desktop">
-                  <ul>
-                      <li><a href="#home">HOME</a></li>
-                      <li><a href="#sobre">SOBRE</a></li>
-                      <li><a href="#servicos">SERVIÇOS</a></li>
-                      <li><a href="#contato">CONTATOS</a></li>
+                    <!--menu desktop-->
+                    <nav class="menu_desktop">
+                        <ul>
+                            <li><a href="#home">HOME</a></li>
+                            <li><a href="#sobre">SOBRE</a></li>
+                            <li><a href="#servicos">SERVIÇOS</a></li>
+                            <li><a href="#contato">CONTATOS</a></li>
+                            <li><button [routerLink]="'/login'" class="btn">ACESSAR</button></li>
+                        </ul>
+                    </nav><!--menu desktop-->
 
-                      <li><button [routerLink]="'/login'" class="btn">ACESSAR</button></li>
+                    <!--menu mobile-->
+                    <nav class="menu_mobile">
 
+                        <h2 class="ativa"><i class="fa-solid fa-bars"></i></h2>
 
-                  </ul>
-              </nav>
+                        <ul>
 
-              <!--menu mobile-->
+                            <h2 class="desativa"><i class="fa-solid fa-x"></i></h2>
+                            <li><a>O Site não está pronto para mobile, use um desktop</a></li>
+                            <li><a href="#home">HOME</a></li>
+                            <li><a href="#sobre">SOBRE</a></li>
+                            <li><a href="#servicos">SERVIÇOS</a></li>
+                            <li><a href="#contato">CONTATOS</a></li>
+                            <li><button [routerLink]="'/login'" class="btn">ACESSAR</button></li>
+                        </ul>
+                    </nav><!--menu mobile-->
+                </div><!--menu-->
 
-          </div><!--menu-->
-          <div class="text-banner">
-            <h2>FAZENDO UM TRABALHO MARAVILHOSO</h2>
-            <h1>BEM-VINDO AO EDUCACONNECT</h1>
-            <h3>Onde nossa maior prioriedade é  <br>sua educação.</h3>
-        </div>
+                <div class="text-banner">
+                    <h2>FAZENDO UM TRABALHO MARAVILHOSO</h2>
+                    <h1>BEM-VINDO AO EDUCACONNECT</h1>
+                    <h3>Onde nossa maior prioriedade é sua educação.</h3>
+                </div>
 
-    </div><!--container-->
-</header>
+            </div>
+        </header>
 
-<section class="features" id="home">
-    <div class="container">
+        <section class="features" id="home">
+            <div class="container">
 
-        <div class="text">
-            <h1>Recursos Incríveis</h1>
-            <p>Nosso site oferece uma ampla gama de ferramentas para um monitoramento eficiente da educação dos nossos alunos, com três prioridades incríveis!</p>
-        </div>
+                <div class="text">
+                    <h1>Recursos Incríveis</h1>
+                    <p>Nosso site oferece uma ampla gama de ferramentas para um monitoramento eficiente da educação dos nossos alunos, com três prioridades incríveis!</p>
+                </div>
 
-        <div class="features-content">
+                <div class="features-content">
 
-            <div class="features-wraper">
-                <div class="features-single">
+                    <div class="features-wraper">
+                        <div class="features-single">
 
-                    <div class="feat-img">
-                        <h2><i class="fa fa-cogs hi-icon"></i></h2>
-                    </div><!--feat img-->
-                    <div class="feat-txt">
-                        <h3>Aplicação de Atividades</h3>
-                        <p>Proporcione uma experiência de aprendizado dinâmica com atividades personalizadas, que ajudam os alunos a praticar e reforçar o conhecimento de forma eficiente.</p>
+                            <div class="feat-img">
+                                <h2><i class="fa fa-cogs hi-icon"></i></h2>
+                            </div>
+                            <div class="feat-txt">
+                                <h3>Aplicação de Atividades</h3>
+                                <p>Proporcione uma experiência de aprendizado dinâmica com atividades personalizadas, que ajudam os alunos a praticar e reforçar o conhecimento de forma eficiente.</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="features-wraper">
+                        <div class="features-single">
+
+                            <div class="feat-img">
+                                <h2><i class="fa fa-clone hi-icon"></i></h2>
+                            </div>
+                            <div class="feat-txt">
+                                <h3>Monitoramento de Progresso</h3>
+                                <p>Acompanhe o desempenho dos alunos em tempo real com relatórios detalhados, facilitando a identificação de dificuldades e a personalização do ensino.</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="features-wraper">
+                        <div class="features-single">
+
+                            <div class="feat-img">
+                                <h2><i class="fa fa-thumbs-o-up hi-icon"></i></h2>
+                            </div>
+                            <div class="feat-txt">
+                                <h3>Ambiente Totalmente Interativo</h3>
+                                <p>Engaje os alunos com uma plataforma intuitiva e interativa, repleta de recursos inovadores que tornam o aprendizado mais envolvente e divertido.</p>
+                            </div>
+
+                        </div>
                     </div>
 
                 </div>
+
             </div>
+        </section>
 
-            <div class="features-wraper">
-                <div class="features-single">
+        <section class="devices" id="sobre">
+            <div class="container">
 
-                    <div class="feat-img">
-                        <h2><i class="fa fa-clone hi-icon"></i></h2>
+                <div class="device_single" style="margin-top: -240px; margin-bottom: 100px;">
+
+                    <div class="device_img" style="margin-top: 140px;">
+                        <img src="assets/images/telefons/telefone3.jpg" alt="">
                     </div>
-                    <div class="feat-txt">
-                        <h3>Monitoramento de Progresso</h3>
-                        <p>Acompanhe o desempenho dos alunos em tempo real com relatórios detalhados, facilitando a identificação de dificuldades e a personalização do ensino.</p>
-                    </div>
 
-                </div>
-            </div>
+                    <div class="device_txt">
+                        <h2>Dispositivos Moveis</h2>
 
-            <div class="features-wraper">
-                <div class="features-single">
+                        <p>Nosso ambiente educativo foi projetado para funcionar perfeitamente em qualquer dispositivo, garantindo que alunos e professores possam acessar conteúdos com facilidade, seja no celular, tablet ou computador.</p>
+                        <p class="blue">Acompanhe o progresso dos alunos em tempo real, resolva atividades e explore um ambiente interativo diretamente da palma da sua mão. Tudo isso com uma interface intuitiva e adaptável a diferentes telas.</p>
+                        <p>Com a nossa versão gratuita, você pode testar todas as funcionalidades essenciais e proporcionar uma experiência de aprendizado acessível e envolvente.</p>
 
-                    <div class="feat-img">
-                        <h2><i class="fa fa-thumbs-o-up hi-icon"></i></h2>
-                    </div>
-                    <div class="feat-txt">
-                        <h3>Ambiente Totalmente Interativo</h3>
-                        <p>Engaje os alunos com uma plataforma intuitiva e interativa, repleta de recursos inovadores que tornam o aprendizado mais envolvente e divertido.</p>
+                        <button>
+                            <i class="fa-solid fa-cloud-arrow-down" style="font-size: 18px; padding: 0 5px;"></i> VERSÃO GRÁTIS
+                        </button>
                     </div>
 
                 </div>
+
+                <div class="device_single" style="margin-top: -240px">
+
+
+                    <div class="device_img" style="margin-top: 140px">
+                        <img src="assets/images/telefons/telefone2.jpg" alt="">
+                    </div>
+
+                    <div class="device_txt">
+                      <h2>Gerenciamento de Progresso</h2>
+
+                      <p>Nosso site é completamente otimizado para dispositivos móveis, permitindo que os alunos acessem suas atividades e acompanhem seu progresso a qualquer momento, diretamente do celular ou tablet. A experiência é fluida e adaptável, garantindo que os dados sejam apresentados de forma clara em telas menores.</p>
+                      <p>Visualize de maneira fácil e intuitiva as notas e o desempenho de cada aluno, com gráficos e relatórios atualizados em tempo real. Monitore o progresso e ajuste a jornada de aprendizado de forma personalizada, tudo diretamente da palma da sua mão.</p>
+
+                      <p class="icon"><i class="fa-solid fa-check"></i>Nosso site é totalmente otimizado para dispositivos móveis.</p>
+                      <p class="icon"><i class="fa-solid fa-check"></i>Resultados e notas dos alunos diretamente do celular ou tablet.</p>
+                      <p class="icon"><i class="fa-solid fa-check"></i>O desempenho de cada aluno é monitorado em tempo real.</p>
+                      <p class="icon"><i class="fa-solid fa-check"></i>Você pode começar a acompanhar o progresso dos alunos.</p>
+                      <p class="icon"><i class="fa-solid fa-check"></i>Experimente como o nosso site pode transformar a maneira de ensinar.</p>
+                  </div>
+
+                </div>
+
             </div>
+        </section>
 
-        </div>
 
-    </div>
-</section>
+        <section class="newsletter">
+            <div class="opacity"></div>
+            <div class="container">
 
-<section class="devices" id="sobre">
-    <div class="container">
+                <form
+                action="https://formspree.io/f/mdobwowz"
+                method="POST"
+                >
 
-        <div class="device_single">
+                    <h2>Viu o suficiente? Estamos atualmente no beta fechado. Digite seu e-mail para entrar na lista de espera.</h2>
 
-            <div class="device_img">
-                <img src="../../../assets/images/telefons/telefone3.jpg" alt="">
-            </div><!--device img-->
+                    <div class="text">
+                        <input type="email" placeholder="Insira Seu Email..">
+                        <button type="submit">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </div>
 
-            <div class="device_txt">
-                <h2>Dispositivos Moveis</h2>
+                </form>
 
-                <p>Nosso ambiente educativo foi projetado para funcionar perfeitamente em qualquer dispositivo, garantindo que alunos e professores possam acessar conteúdos com facilidade, seja no celular, tablet ou computador.</p>
-                <p class="blue">Acompanhe o progresso dos alunos em tempo real, resolva atividades e explore um ambiente interativo diretamente da palma da sua mão. Tudo isso com uma interface intuitiva e adaptável a diferentes telas.</p>
-                <p>Com a nossa versão gratuita, você pode testar todas as funcionalidades essenciais e proporcionar uma experiência de aprendizado acessível e envolvente.</p>
-
-                <button>
-                    <i class="fa-solid fa-cloud-arrow-down" style="font-size: 18px; padding: 0 5px;"></i> VERSÃO GRÁTIS
-                </button>
             </div>
+        </section>
+
+        <section class="services" id="servicos">
+            <div class="container">
+
+              <div class="text">
+                <h1>Nossos Serviços</h1>
+                <p>O EducaConnect oferece recursos que fortalecem a parceria entre escola e família, tornando o acompanhamento educacional mais simples, acessível e envolvente.</p>
+              </div>
+
+              <div class="cell">
+                <img src="assets/images/person/person1.jpg" alt="Imagem ilustrativa do aplicativo EducaConnect">
+              </div>
+
+                <div class="service-cont">
+
+                    <div class="serv-wrper">
+                        <div class="serv-single">
+                            <div class="serv-img">
+                                <i class="fa-solid fa-screwdriver-wrench"></i>
+                                <span>Supporte 24/7</span>
+                            </div>
+                            <div class="serv-txt">
+                                <p>Conte com nossa equipe sempre que precisar. Oferecemos suporte técnico contínuo para garantir o bom uso da plataforma.</p>        </div>
+                        </div>
+                    </div>
+
+                    <div class="serv-wrper">
+                        <div class="serv-single">
+                            <div class="serv-img">
+                                <i class="fa-solid fa-users"></i>
+                                <span>Uso Amigavel</span>
+                            </div>
+                            <div class="serv-txt">
+                                <p>Interface simples e amigável para que pais, professores e alunos possam navegar com facilidade e segurança.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="serv-wrper">
+                        <div class="serv-single">
+                            <div class="serv-img">
+                                <i class="fa-solid fa-bell"></i>
+                                <span>Notifications</span>
+                            </div>
+                            <div class="serv-txt">
+                                <p>Receba alertas sobre tarefas, reuniões e atualizações diretamente no seu dispositivo, sem perder nada.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="serv-wrper">
+                        <div class="serv-single">
+                            <div class="serv-img">
+                                <i class="fa-brands fa-rocketchat"></i>
+                                <span>Comunicação Segura</span>
+                            </div>
+                            <div class="serv-txt">
+                                <p>Converse com professores e responsáveis através de um chat seguro, promovendo o diálogo e o engajamento escolar.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="serv-wrper">
+                        <div class="serv-single">
+                            <div class="serv-img">
+                                <i class="fa-solid fa-earth-americas"></i>
+                                <span>Acessibilidade</span>
+                            </div>
+                            <div class="serv-txt">
+                                <p>A plataforma pode ser acessada de qualquer lugar, garantindo inclusão e acompanhamento mesmo à distância.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="serv-wrper">
+                        <div class="serv-single">
+                            <div class="serv-img">
+                                <i class="fa-solid fa-piggy-bank"></i>
+                                <span>Controle de Custo</span>
+                            </div>
+                            <div class="serv-txt">
+                                <p>Digitalize processos e reduza custos com papel, contribuindo para uma educação mais sustentável e eficiente.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
             </div>
+        </section>
 
-            <div class="device_single">
+
+        <section class="paises">
+            <div class="container">
+
+                <div class="igm">
+                    <img src="assets/images/person/image-section.jpg" alt="">
+                </div>
+
+               <div class="asks">
+                    <div class="txt">
+                        <p><i class="fa-solid fa-rocket"></i> O EducaConnect funciona em todos os países?</p>
+                        <hr>
+                        <p class="resposta busca">Sim! Nossa plataforma está disponível online e pode ser acessada de qualquer lugar do mundo. Professores, pais e alunos podem aproveitar todos os recursos, independentemente da localização.</p>
+                    </div>
+
+                    <div class="txt">
+                        <p><i class="fa-solid fa-trophy"></i> Como posso gerenciar ou desativar as notificações?</p>
+                        <hr>
+                        <p class="resposta">Você pode acessar as configurações da sua conta para escolher quais notificações deseja receber. Também é possível ativar ou desativar alertas de atividades, reuniões e mensagens.</p>
+                    </div>
+
+                    <div class="txt">
+                        <p><i class="fa-solid fa-house-laptop"></i> Posso usar minha conta em mais de um dispositivo?</p>
+                        <hr>
+                        <p class="resposta">Claro! O EducaConnect permite acesso simultâneo em vários dispositivos, como celular, tablet e computador, para facilitar o acompanhamento das atividades em qualquer lugar.</p>
+                    </div>
+
+                    <div class="txt">
+                        <p><i class="fa-solid fa-leaf"></i> O EducaConnect contribui com a sustentabilidade?</p>
+                        <hr style="color: aqua;">
+                        <p class="resposta">Sim! Nossa plataforma reduz o uso de papel ao digitalizar atividades, comunicados e agendas escolares, ajudando o meio ambiente e promovendo uma educação mais consciente.</p>
+                    </div>
+               </div>
+
+            </div><!--container-->
+        </section><!--paises-->
+
+        <!--section discover-->
+        <section class="discover">
+            <div class="container">
+
+                <div class="text">
+                    <h1>Explore Recursos Educacionais</h1>
+                    <p>Com o EducaConnect, pais, professores e alunos têm acesso a funcionalidades que tornam o aprendizado mais envolvente e organizado.</p>
+                </div>
 
 
-              <div class="device_img">
-                  <img src="../../../assets/images/telefons/telefone2.jpg" alt="">
-              </div><!--device img-->
+                <div class="discover-all">
 
-              <div class="device_txt">
-                <h2>Gerenciamento de Progresso</h2>
+                    <div class="img-info">
+                        <img src="assets/images/person/person2.jpg" alt="Recursos no celular">
+                    </div>
 
-                <p>Nosso site é completamente otimizado para dispositivos móveis, permitindo que os alunos acessem suas atividades e acompanhem seu progresso a qualquer momento, diretamente do celular ou tablet. A experiência é fluida e adaptável, garantindo que os dados sejam apresentados de forma clara em telas menores.</p>
-                <p>Visualize de maneira fácil e intuitiva as notas e o desempenho de cada aluno, com gráficos e relatórios atualizados em tempo real. Monitore o progresso e ajuste a jornada de aprendizado de forma personalizada, tudo diretamente da palma da sua mão.</p>
+                    <div class="discover-cont">
 
-                <p class="icon"><i class="fa-solid fa-check"></i>Nosso site é totalmente otimizado para dispositivos móveis.</p>
-                <p class="icon"><i class="fa-solid fa-check"></i>Resultados e notas dos alunos diretamente do celular ou tablet.</p>
-                <p class="icon"><i class="fa-solid fa-check"></i>O desempenho de cada aluno é monitorado em tempo real.</p>
-                <p class="icon"><i class="fa-solid fa-check"></i>Você pode começar a acompanhar o progresso dos alunos.</p>
-                <p class="icon"><i class="fa-solid fa-check"></i>Experimente como o nosso site pode transformar a maneira de ensinar.</p>
+                        <div class="discover-wrper">
+                            <div class="discover-single">
+                                <div class="discover-img">
+                                    <i class="fa-solid fa-screwdriver-wrench"></i>
+                                    <span>Suporte Educacional</span>
+                                </div>
+                                <div class="discover-txt">
+                                    <p>Nossa equipe está disponível 24 horas para tirar dúvidas e oferecer orientação técnica e pedagógica.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="discover-wrper">
+                            <div class="discover-single">
+                                <div class="discover-img">
+                                    <i class="fa-solid fa-bell"></i>
+                                    <span>Alertas Personalizados</span>
+                                </div>
+                                <div class="discover-txt">
+                                    <p>Receba notificações sobre atividades, reuniões e progresso do aluno diretamente no seu dispositivo.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="discover-wrper">
+                            <div class="discover-single">
+                                <div class="discover-img">
+                                    <i class="fa-brands fa-rocketchat"></i>
+                                    <span>Comunicação Fácil</span>
+                                </div>
+                                <div class="discover-txt">
+                                    <p>Conecte-se com professores, responsáveis e outros alunos de forma segura e eficaz.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
             </div>
+        </section>
 
-        </div>
+        <section class="watch">
+            <div class="opacity"></div>
 
-    </div>
-</section>
+            <div class="container">
 
-<!--section Newsletter-->
-<section class="newsletter">
-  <div class="opacity"></div>
-  <div class="container">
+                <a href="https://www.youtube.com/@SOUFAMETROTV" target="_blank">
+                    <button>
+                        <i class="fa-solid fa-play"></i>
+                    </button>
+                </a>
+                <h1>Assista ao vídeo e descubra como transformar a educação infantil</h1>
 
-      <form
-      action="https://formspree.io/f/mdobwowz"
-      method="POST"
-      >
-
-          <h2>Viu o suficiente? Estamos atualmente no beta fechado. Digite seu e-mail para entrar na lista de espera.</h2>
-
-          <div class="text">
-              <input type="email" placeholder="Insira Seu Email..">
-              <button type="submit" >
-                  <i class="fa-solid fa-magnifying-glass" ></i>
-              </button>
-          </div><!--text-->
-
-      </form><!--form-->
-
-  </div><!--container-->
-</section><!--newsletter-->
-
-
-
-<!-- Seção de Serviços -->
-<section class="services" id="servicos">
-  <div class="container">
-
-    <div class="text">
-      <h1>Nossos Serviços</h1>
-      <p>O EducaConnect oferece recursos que fortalecem a parceria entre escola e família, tornando o acompanhamento educacional mais simples, acessível e envolvente.</p>
-    </div><!--text-->
-
-    <div class="cell">
-      <img src="../../../assets/images/person/person1.jpg" alt="Imagem ilustrativa do aplicativo EducaConnect">
-    </div><!--cell-->
-
-    <div class="service-cont">
-
-      <div class="serv-wrper">
-        <div class="serv-single">
-          <div class="serv-img">
-            <i class="fa-solid fa-screwdriver-wrench"></i>
-            <span>Suporte 24h</span>
-          </div>
-          <div class="serv-txt">
-            <p>Conte com nossa equipe sempre que precisar. Oferecemos suporte técnico contínuo para garantir o bom uso da plataforma.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="serv-wrper">
-        <div class="serv-single">
-          <div class="serv-img">
-            <i class="fa-solid fa-users"></i>
-            <span>Uso Intuitivo</span>
-          </div>
-          <div class="serv-txt">
-            <p>Interface simples e amigável para que pais, professores e alunos possam navegar com facilidade e segurança.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="serv-wrper">
-        <div class="serv-single">
-          <div class="serv-img">
-            <i class="fa-solid fa-bell"></i>
-            <span>Notificações</span>
-          </div>
-          <div class="serv-txt">
-            <p>Receba alertas sobre tarefas, reuniões e atualizações diretamente no seu dispositivo, sem perder nada.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="serv-wrper">
-        <div class="serv-single">
-          <div class="serv-img">
-            <i class="fa-brands fa-rocketchat"></i>
-            <span>Comunicação Segura</span>
-          </div>
-          <div class="serv-txt">
-            <p>Converse com professores e responsáveis através de um chat seguro, promovendo o diálogo e o engajamento escolar.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="serv-wrper">
-        <div class="serv-single">
-          <div class="serv-img">
-            <i class="fa-solid fa-earth-americas"></i>
-            <span>Acessibilidade</span>
-          </div>
-          <div class="serv-txt">
-            <p>A plataforma pode ser acessada de qualquer lugar, garantindo inclusão e acompanhamento mesmo à distância.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="serv-wrper">
-        <div class="serv-single">
-          <div class="serv-img">
-            <i class="fa-solid fa-piggy-bank"></i>
-            <span>Economia</span>
-          </div>
-          <div class="serv-txt">
-            <p>Digitalize processos e reduza custos com papel, contribuindo para uma educação mais sustentável e eficiente.</p>
-          </div>
-        </div>
-      </div>
-
-    </div><!--service-cont-->
-
-  </div><!--container-->
-</section><!--services-->
-
-<!--sessão dos paises-->
-<!-- Sessão dos Países (Perguntas Frequentes) -->
-<section class="paises">
-  <div class="container">
-    <div class="igm">
-      <img src="../assets/images/person/image-section.jpg" alt="Imagem de apoio">
-    </div>
-
-    <div class="asks">
-      <div class="textobaixo">
-      <div class="txt">
-        <p><i class="fa-solid fa-rocket"></i> O EducaConnect funciona em todos os países?</p>
-        <hr>
-        <p class="resposta busca">Sim! Nossa plataforma está disponível online e pode ser acessada de qualquer lugar do mundo. Professores, pais e alunos podem aproveitar todos os recursos, independentemente da localização.</p>
-      </div>
-    </div>
-
-      <div class="txt">
-        <p><i class="fa-solid fa-trophy"></i> Como posso gerenciar ou desativar as notificações?</p>
-        <hr>
-        <p class="resposta">Você pode acessar as configurações da sua conta para escolher quais notificações deseja receber. Também é possível ativar ou desativar alertas de atividades, reuniões e mensagens.</p>
-      </div>
-
-      <div class="txt">
-        <p><i class="fa-solid fa-house-laptop"></i> Posso usar minha conta em mais de um dispositivo?</p>
-        <hr>
-        <p class="resposta">Claro! O EducaConnect permite acesso simultâneo em vários dispositivos, como celular, tablet e computador, para facilitar o acompanhamento das atividades em qualquer lugar.</p>
-      </div>
-
-      <div class="txt">
-        <p><i class="fa-solid fa-leaf"></i> O EducaConnect contribui com a sustentabilidade?</p>
-        <hr style="color: aqua;">
-        <p class="resposta">Sim! Nossa plataforma reduz o uso de papel ao digitalizar atividades, comunicados e agendas escolares, ajudando o meio ambiente e promovendo uma educação mais consciente.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Sessão Descubra Recursos -->
-<section class="discover">
-  <div class="container">
-    <div class="text">
-      <h1>Explore Recursos Educacionais</h1>
-      <p>Com o EducaConnect, pais, professores e alunos têm acesso a funcionalidades que tornam o aprendizado mais envolvente e organizado.</p>
-    </div>
-
-    <div class="discover-all">
-      <div class="img-info">
-        <img src="../../../assets/images/person/person2.jpg" alt="Recursos no celular">
-      </div>
-
-      <div class="discover-cont">
-        <div class="discover-wrper">
-          <div class="discover-single">
-            <div class="discover-img">
-              <i class="fa-solid fa-screwdriver-wrench"></i>
-              <span>Suporte Educacional</span>
             </div>
-            <div class="discover-txt">
-              <p>Nossa equipe está disponível 24 horas para tirar dúvidas e oferecer orientação técnica e pedagógica.</p>
+        </section>
+
+        <!--banner download-->
+        <section class="download">
+            <div class="container">
+
+                <div class="text">
+                    <h1 style="color: gray;">Todos os Dispositivos</h1>
+                    <p style="color: gray;">Baixe sua versão gratuita agora e explore tudo o que nossa plataforma pode proporcionar! </p>
+                </div>
+
+                <div class="so">
+
+                    <div class="so-wr">
+                        <div class="so-cont">
+                            <button><i class="fa-brands fa-apple"></i>  IOS</button>
+                        </div>
+                    </div>
+
+                    <div class="so-wr">
+                        <div class="so-cont">
+                            <button><i class="fa-brands fa-windows"></i>  WINDOWS</button>
+                        </div>
+                    </div>
+
+                    <div class="so-wr">
+                        <div class="so-cont">
+                            <button><i class="fa-brands fa-linux"></i>  LINUX</button>
+                        </div>
+                    </div>
+
+                </div>
+
             </div>
-          </div>
-        </div>
+        </section>
 
-        <div class="discover-wrper">
-          <div class="discover-single">
-            <div class="discover-img">
-              <i class="fa-solid fa-bell"></i>
-              <span>Alertas Personalizados</span>
+
+        <section class="contact" id="contato">
+            <div class="container">
+
+                <div class="text">
+                    <h1 style="color: white;">FALE CONOSCO</h1>
+                    <p style="color: white;">Tem alguma dúvida, sugestão ou precisa de ajuda? Nossa equipe está pronta para te ouvir. Entre em contato e teremos o prazer de responder o quanto antes!</p>
+                </div>
+
+
+                <form
+                action="https://formspree.io/f/mdobwowz"
+                method="POST"
+                >
+
+                    <div class="form-flut">
+                        <div class="w100">
+                            <input type="text" name="nome" placeholder="Digite seu Nome..">
+                            <input type="email" name="email" placeholder="Digite seu Email..">
+                            <input type="number" name="numero" placeholder="Digite seu Numero..">
+                        </div>
+
+                        <div class="w50">
+                            <textarea name="Mensagem" placeholder="Deixe Sua Mensagem.."></textarea>
+                        </div>
+                    </div>
+
+                    <input type="submit" value="Enviar">
+
+                </form>
+
             </div>
-            <div class="discover-txt">
-              <p>Receba notificações sobre atividades, reuniões e progresso do aluno diretamente no seu dispositivo.</p>
+        </section>
+
+        <footer>
+            <div class="container">
+                <span><a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook" target="_blank"></i></a> <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a> <a href="https://twitter.com/" target="_blank"><i class="fa-brands fa-twitter"></i></a> <a href="https://youtube.com" target="_blank"><i class="fa-brands fa-youtube"></i></a></span>
+                <p>EducaConnect - 2022 </p>
             </div>
-          </div>
-        </div>
+        </footer>
 
-        <div class="discover-wrper">
-          <div class="discover-single">
-            <div class="discover-img">
-              <i class="fa-brands fa-rocketchat"></i>
-              <span>Comunicação Fácil</span>
-            </div>
-            <div class="discover-txt">
-              <p>Conecte-se com professores, responsáveis e outros alunos de forma segura e eficaz.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Sessão Assistir -->
-<section class="watch">
-  <div class="opacity"></div>
-  <div class="container">
-    <a href="https://www.youtube.com/@SOUFAMETROTV" target="_blank">
-      <button>
-        <i class="fa-solid fa-play"></i>
-      </button>
-    </a>
-    <h1>Assista ao vídeo e descubra como transformar a educação infantil</h1>
-  </div>
-</section>
-
-
-
-<section class="contact" id="contato">
-  <div class="container">
-
-  <div class="text">
-    <h1 style="color: white;">FALE CONOSCO</h1>
-  </div><!--text-->
-
-
-  <form
-  action="https://formspree.io/f/mdobwowz"
-  method="POST"
-  >
-
-    <div class="form-flut">
-        <div class="w100">
-            <input type="text" name="nome" placeholder="Digite seu Nome..">
-            <input type="email" name="email" placeholder="Digite seu Email..">
-            <input type="number" name="numero" placeholder="Digite seu Numero..">
-        </div>
-
-        <div class="w50">
-            <textarea name="Mensagem" placeholder="Deixe Sua Mensagem.."></textarea>
-        </div>
-    </div>
-
-    <input type="submit" value="Enviar">
-
-  </form>
-
-  </div>
-  </section> <!--contact-->
-
-  <footer>
-  <div class="container">
-  <span><a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook" target="_blank"></i></a> <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a> <a href="https://twitter.com/" target="_blank"><i class="fa-brands fa-twitter"></i></a> <a href="https://youtube.com" target="_blank"><i class="fa-brands fa-youtube"></i></a></span>
-  <p>EducaConnect - 2025 </p>
-  <p> <i class="fa-solid fa-laptop-code"></i></p>
-  </div><!--container-->
+    </body>
+</html>

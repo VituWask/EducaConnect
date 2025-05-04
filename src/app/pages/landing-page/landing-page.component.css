@@ -85,6 +85,38 @@ header .menu{
   width: 100%;
 }
 
+header .menu_mobile ul button{
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 550;
+  cursor: pointer;
+}
+
+header .menu_mobile ul button:hover{
+  transition: 1s;
+  border: 1px solid #0092f3;
+  background-color: #0092f3;
+  color: white;
+  }
+
+header .menu_desktop ul button{
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 550;
+  cursor: pointer;
+}
+
+header .menu_desktop ul button:hover{
+transition: 1s;
+border: 1px solid #0092f3;
+background-color: #0092f3;
+color: white;
+}
+
 /* logo */
 
 header .logo{
@@ -112,15 +144,6 @@ header .menu_desktop ul{
   list-style: none;
   display: flex;
   justify-content: end;
-}
-
-header .menu_desktop ul button{
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 16px;
-  font-weight: 550;
-  cursor: pointer;
 }
 
 header .menu_desktop ul li{
@@ -291,7 +314,6 @@ section.devices .device_img{
 
 section.devices .device_img img{
   width: 100%;
-  margin-bottom: -550px;
 }
 
 /* Section Newsletter */
@@ -356,65 +378,9 @@ section.newsletter .text button{
   border-radius: 0 10px 10px 0;
   background-color: transparent;
   border: 1px solid white;
-  padding: 21px;
+  border-left: none;
 }
 
-/* time */
-
-section.time{
-  padding: 50px 0;
-  width: 100%;
-}
-
-section.time .time-content{
-  width: 100%;
-  display: flex;
-  margin-top: 50px;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-}
-
-section.time .time-wraper{
-  width: calc(100% / 4);
-  padding: 20px;
-}
-
-section.time .time-single{
-  width: 100%;
-  position: relative;
-}
-
-section.time .time-single img{
-  width: 100%;
-}
-
-section.time .time-single .text-time{
-  text-align: center;
-  width: 100%;
-}
-
-section.time .time-single .text-time h3{
-  color: #333;
-}
-
-section.time .time-single .text-time p{
-  padding: 7px 0;
-  color: #0092f3;
-}
-
-section.time .time-single .text-time .redes{
-  display: none;
-}
-
-section.time .time-single .text-time .redes a{
-  color: #0092f3;
-  font-size: 20px;
-  padding: 0 10px;
-  transition: 1s;
-}
-
-/* serviços */
 
 section.services{
   width: 100%;
@@ -487,8 +453,6 @@ section.paises .igm img{
   width: 100%;
 }
 
-
-
 section.paises .asks{
   width: 50%;
   padding: 20px ;
@@ -515,11 +479,6 @@ section.paises .asks .txt .resposta{
   overflow: hidden;
 
 }
-
-section.paises .asks .textobaixo {
-  margin-bottom: -100px;
-}
-
 
 /* discover */
 
@@ -575,8 +534,7 @@ section.discover .img-info{
 }
 
 section.discover .img-info img{
-  width: 100%;
-  margin-bottom: -350px;
+  width: 80%;
 }
 
 /* watch */
@@ -624,84 +582,12 @@ section.watch h1{
   margin-top: 30px;
 }
 
-/* precos */
-
-section.precos{
-  width: 100%;
-  margin: 50px 0 ;
-}
-
-section.precos .precos-cont{
-  margin-top: 50px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  align-items: center;
-}
-
-section.precos .precos-wraper{
-  text-align: center;
-  width: calc(100% / 3);
-  padding: 20px;
-}
-
-section.precos .precos-single{
-  height: 450px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-section.precos .precos-single h3{
-  font-size: 18px;
-}
-
-section.precos .precos-single h1{
-  font-size: 70px;
-}
-
-section.precos .blu{
-  color: white;
-  background-color: #007dd1;
-}
-
-section.precos .precos-single p{
-  padding: 10px 0;
-}
-
-section.precos .precos-single button{
-  width: 50%;
-  padding: 15px;
-  color: white;
-  border: none;
-  cursor: pointer;
-  background-color: #007dd1;
-}
-
-section.precos .precos-single button:hover{
-  background-color: transparent;
-  transition: 1s;
-  border: 1px solid #007dd1;
-  color: #007dd1;
-}
-
-section.precos .blu button{
-  border: 1px solid white;
-}
-
-section.precos .blu button:hover{
-  color: #007dd1;
-  background-color: white;
-  transition: 1s;
-}
 
 /* Downloads */
 section.download{
   width: 100%;
   height: 50vh;
-  background-image: url(../../../assets/images/background/background3.jpg);
+  background-color: white;
   background-position: top;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -738,14 +624,13 @@ section.download button{
   width: 80%;
   padding: 15px;
   background-color: transparent;
-  border: 1px solid white;
-  color: white;
+  border: 1px solid black;
+  color: black;
   border-radius: 5px;
 }
 
 section.download button:hover{
-  background-color: white;
-  color: #007dd1;
+  background-color: lightslategrey;
   cursor: pointer;
   transition: 1s;
 }
@@ -804,6 +689,7 @@ section.contact form .w100 input{
   margin: 15px 0;
   outline: none;
   color: white;
+  border-radius: 10px;
   padding:15px;
 }
 
@@ -847,7 +733,31 @@ footer p{
 
 
 
+.menuAparece{
+  width: 100% !important;
+  transition: 1s !important;
+}
 
+.blockeff{
+  display: block !important;
+}
+
+.busca{
+  font-weight: lighter !important;
+  height: 150px !important;
+  transition: 1s;
+}
+
+
+
+
+
+
+
+
+
+
+/* Ocultando Menu Mobile */
 
 header nav.menu_mobile{
   display: none;
@@ -1085,24 +995,3 @@ header nav.menu_mobile{
 
 
 }
-
-
-
-
-\\EFECTS
-
-.menuAparece{
-  width: 100% !important;
-  transition: 1s !important;
-}
-
-.blockeff{
-  display: block !important;
-}
-
-.busca{
-  font-weight: lighter !important;
-  height: 150px !important;
-  transition: 1s;
-}
-

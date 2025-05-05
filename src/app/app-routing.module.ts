@@ -19,6 +19,10 @@ import { Game2Component } from './pages/main-page/game/game-2/game-2.component';
 import { Game3Component } from './pages/main-page/game/game-3/game-3.component';
 import { Game4Component } from './pages/main-page/game/game-4/game-4.component';
 import { Game5Component } from './pages/main-page/game/game-5/game-5.component';
+import { Game6Component } from './pages/main-page/game/game-6/game-6.component';
+import { Game7Component } from './pages/main-page/game/game-7/game-7.component';
+import { Game8Component } from './pages/main-page/game/game-8/game-8.component';
+import { Game9Component } from './pages/main-page/game/game-9/game-9.component';
 
 const routes: Routes = [
   {path: '', component: LandingPageComponent, pathMatch: 'full'},
@@ -30,6 +34,10 @@ const routes: Routes = [
     {path : 'game3', component: Game3Component},
     {path : 'game4', component: Game4Component},
     {path : 'game5', component: Game5Component},
+    {path : 'game6', component: Game6Component},
+    {path : 'game7', component: Game7Component},
+    {path : 'game8', component: Game8Component},
+    {path : 'game9', component: Game9Component},
     {path : 'inicio', component: AlunoInicioComponent},
     {path: 'agenda', component: AlunoAgendaComponent},
     {path: 'desempenho', component: AlunoDesempenhoComponent},

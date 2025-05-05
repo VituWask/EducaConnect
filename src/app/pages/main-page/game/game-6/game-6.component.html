@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Iframe Reduzido com Corte</title>
+    <style>
+      .iframe-container {
+        width: 1600px;         /* 80% de 2000 */
+        height: 560px;         /* 80% de 1000 menos os 100px de corte */
+        overflow: hidden;
+        position: relative;
+      }
+
+      .iframe-container iframe {
+        transform: scale(0.8);
+        transform-origin: top left;
+        width: 2000px;
+        height: 1000px;
+        border: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="iframe-container">
+      <iframe style="margin-top: -100px; margin-bottom: 100px;"
+        src="https://html-classic.itch.zone/html/13164091/index.html"
+        scrolling="no"
+      ></iframe>
+    </div>
+  </body>
+</html>

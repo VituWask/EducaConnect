@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>A Aventura de Apollo</title>
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <style>
@@ -18,28 +18,24 @@
 
     canvas {
       background: transparent;
-      display: block;
       position: absolute;
       z-index: 2;
     }
 
-    #background {
+    #background, #gameBackground {
       position: absolute;
       width: 768px;
       height: 368px;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
+    }
+
+    #background {
       z-index: 1;
     }
 
     #gameBackground {
-      position: absolute;
-      width: 768px;
-      height: 368px;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
       z-index: 0;
       display: none;
     }
@@ -97,47 +93,38 @@
 
     button:hover {
       background-color: #555;
-      color: #fff;
     }
   </style>
 </head>
 <body>
-
-  <!-- GIF de fundo na tela inicial -->
-  <div id="background" style="display: block;">
-    <img src="https://images.steamusercontent.com/ugc/1908991191290015339/7F37F12C3C393936B11980F5E25C55D816240FDA/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true"
-      alt="GIF de fundo" width="768" height="368">
+  <div id="background">
+    <img src="https://images.steamusercontent.com/ugc/1908991191290015339/7F37F12C3C393936B11980F5E25C55D816240FDA/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true" width="768" height="368" />
   </div>
 
-  <!-- GIF de fundo durante o jogo -->
-  <div id="gameBackground" style="display: none;">
-    <img src="https://i.pinimg.com/originals/79/a9/2c/79a92c4f98f1027ddd94771f1a742942.gif"
-      alt="GIF de fundo do jogo" width="768" height="368">
+  <div id="gameBackground">
+    <img src="https://i.pinimg.com/originals/79/a9/2c/79a92c4f98f1027ddd94771f1a742942.gif" width="768" height="368" />
   </div>
 
-  <!-- TELA DE INÍCIO -->
   <div id="startScreen" class="screen" style="display: flex;">
     <h1>A Aventura de Apollo</h1>
     <p>Pressione "Iniciar" para começar a aventura!</p>
     <button onclick="showIntro()">Iniciar</button>
   </div>
 
-  <!-- TELA DE INTRODUÇÃO -->
   <div id="introScreen" class="screen">
     <p>És Apollo, um jovem gato bruxo em busca de um castelo em ruína esquecida pelo tempo...<br><br>
-      Em uma de suas buscas encontraste um num dia chuvoso. Em sua curiosidade entrou, e naquele momento foi o seu erro...<br><br>
-      Pois ativou inimigos que querem derrotá-lo.<br>
-      Sobreviva o máximo que conseguir... até ajuda chegar.</p>
+    Em uma de suas buscas encontraste um num dia chuvoso. Em sua curiosidade entrou, e naquele momento foi o seu erro...<br><br>
+    Pois ativou inimigos que querem derrotá-lo.<br>
+    Sobreviva o máximo que conseguir... até ajuda chegar.</p>
   </div>
 
-  <!-- TELA DE GAME OVER -->
   <div id="gameOverScreen" class="screen">
     <div id="gameOverText"></div>
     <button onclick="restartGame()">Reiniciar</button>
   </div>
 
   <div id="answerBox">
-    <input type="text" id="answerInput" placeholder="Resposta" autocomplete="off">
+    <input type="text" id="answerInput" placeholder="Resposta" autocomplete="off" />
   </div>
 
   <canvas id="gameCanvas" width="768" height="368"></canvas>
@@ -161,20 +148,16 @@
     let enemySpeed = 0.1;
     let gameRunning = false;
 
-    const cube = { x: 384, y: 290, size: 50 };
-    const circle = { offsetX: 30, offsetY: -40, radius: 10 };
-
-    const correctSound = new Audio('correct.mp3');
-    const wrongSound = new Audio('wrong.mp3');
+    const cube = { x: 384, y: 294, size: 110 };
 
     function showIntro() {
       startScreen.style.display = "none";
       introScreen.style.display = "flex";
-      background.style.display = "none"; // esconder gif inicial
+      background.style.display = "none";
       setTimeout(() => {
         introScreen.style.display = "none";
         gameRunning = true;
-        gameBackground.style.display = "block"; // mostrar o fundo do jogo
+        gameBackground.style.display = "block";
         gameLoop();
       }, 6000);
     }
@@ -187,7 +170,7 @@
       lives = 3;
       enemySpeed = 0.1;
       gameRunning = true;
-      gameOverScreen.style.display = 'none';
+      gameOverScreen.style.display = "none";
       gameLoop();
     }
 
@@ -199,38 +182,50 @@
       const a = getRandomNumber();
       const b = getRandomNumber();
       const isSum = Math.random() < 0.5;
-      const y = 290;
-      const width = 50;
-      const height = 50;
-      const x = fromLeft ? -50 : canvas.width + 50;
-      const overlapping = enemies.some(e => Math.abs(e.x - x) < width && Math.abs(e.y - y) < height);
+      const y = 260;
+      const width = 100;
+      const height = 100;
+      const x = fromLeft ? -width : canvas.width + width;
+      const overlapping = enemies.some(e => Math.abs(e.x - x) < width + 30 && Math.abs(e.y - y) < height);
       if (overlapping) return null;
       return { x, y, width, height, a, b, isSum, answered: false, direction: fromLeft ? 1 : -1 };
     }
 
     function drawCube() {
-      ctx.fillStyle = "gray";
-      ctx.fillRect(cube.x - cube.size / 2, cube.y - cube.size / 2, cube.size, cube.size);
-      ctx.beginPath();
-      ctx.arc(cube.x + circle.offsetX, cube.y + circle.offsetY, circle.radius, 0, Math.PI * 2);
-      ctx.fillStyle = "orange";
-      ctx.fill();
+      const img = new Image();
+      img.src = "https://i.imgur.com/DyvrjEF.gif";
+      ctx.drawImage(img, cube.x - cube.size / 2, cube.y - cube.size / 2, cube.size, cube.size);
     }
 
     function drawEnemy(e) {
-      ctx.fillStyle = "red";
-      ctx.fillRect(e.x, e.y, e.width, e.height);
+      const img = new Image();
+      img.src = e.isSum ? "https://i.imgur.com/n05yPlm.gif" : "https://i.imgur.com/2ePDvHY.gif";
+      const shouldFlip = (!e.isSum && e.direction === -1) || (e.isSum && e.direction === 1);
+
+      if (shouldFlip) {
+        ctx.save();
+        ctx.scale(-1, 1);
+        ctx.drawImage(img, -e.x - e.width, e.y, e.width, e.height);
+        ctx.restore();
+      } else {
+        ctx.drawImage(img, e.x, e.y, e.width, e.height);
+      }
+
       ctx.fillStyle = "white";
-      ctx.font = "10px 'Press Start 2P'";
-      ctx.fillText(`${e.a} ${e.isSum ? "+" : "-"} ${e.b}`, e.x + 2, e.y - 10);
+      ctx.font = "12px 'Press Start 2P'";
+      const text = `${e.a} ${e.isSum ? "+" : "-"} ${e.b}`;
+      const textWidth = ctx.measureText(text).width;
+      ctx.fillText(text, e.x + e.width / 2 - textWidth / 2, e.y - 8);
     }
 
     function checkCollision(e) {
       const c = cube;
-      return (e.x + e.width > c.x - c.size / 2 &&
-              e.x < c.x + c.size / 2 &&
-              e.y + e.height > c.y - c.size / 2 &&
-              e.y < c.y + c.size / 2);
+      return (
+        e.x + e.width > c.x - c.size / 2 &&
+        e.x < c.x + c.size / 2 &&
+        e.y + e.height > c.y - c.size / 2 &&
+        e.y < c.y + c.size / 2
+      );
     }
 
     function update() {
@@ -240,7 +235,6 @@
         if (!e.answered && checkCollision(e)) {
           e.answered = true;
           lives--;
-          wrongSound.play();
           if (lives <= 0) showGameOver();
         }
       });
@@ -281,7 +275,6 @@
     answerInput.addEventListener("keydown", e => {
       if (e.key === "Enter" && gameRunning) {
         const ans = parseInt(answerInput.value);
-        let found = false;
         for (const e of enemies) {
           if (!e.answered) {
             const correct = e.isSum ? e.a + e.b : e.a - e.b;
@@ -289,15 +282,12 @@
               e.answered = true;
               score++;
               kills++;
-              correctSound.play();
               enemySpeed += 0.1;
               if (kills % 10 === 0) round++;
-              found = true;
               break;
             }
           }
         }
-        if (!found) wrongSound.play();
         answerInput.value = "";
       }
     });

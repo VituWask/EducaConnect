@@ -1,0 +1,14 @@
+img {
+  position: absolute;
+  top: 0; /* A imagem começa logo abaixo do conteúdo da página */
+  left: 0;
+  width: 100%;
+  height: 100vh;
+
+}
+
+iframe {
+  position: relative; /* Permite o uso de z-index */
+  z-index: 1; /* Coloca o iframe acima da imagem */
+}
+

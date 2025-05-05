@@ -16,7 +16,7 @@ html {
 .image-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 12px; /* Reduzi o espaço entre imagens */
+  gap: 24px; /* Reduzi o espaço entre imagens */
   padding: 16px; /* Reduzi também o padding geral */
 }
 
@@ -26,10 +26,10 @@ html {
 }
 
 .image-grid img {
-  width: 75%; /* Diminuí o tamanho da imagem */
+  width: 23dvw; /* Diminuí o tamanho da imagem */
   height: auto;
-  max-height: 23dvh;
-  min-height: 23dvh;
+  max-height: 30dvh;
+  min-height: 30dvh;
   border-radius: 8px;
   transition: transform 0.3s ease;
 }

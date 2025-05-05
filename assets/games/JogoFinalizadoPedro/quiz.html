@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz de Matemática</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="quiz-container">
+        <h1>Quiz de Ciências</h1>
+    
+        <div id="progress-bar-container">
+            <div id="progress-bar"></div>
+        </div>
+    
+        <div id="progress">Pergunta 1 de 10</div>
+        <p id="question">Qual é a pergunta?</p>
+    
+        <div id="choices">
+            <button class="choice" onclick="checkAnswer(0)">Alternativa 1</button>
+            <button class="choice" onclick="checkAnswer(1)">Alternativa 2</button>
+            <button class="choice" onclick="checkAnswer(2)">Alternativa 3</button>
+            <button class="choice" onclick="checkAnswer(3)">Alternativa 4</button>
+        </div>
+    </div>
+
+    <script src="questions.js"></script>
+    <script src="quiz.js"></script>
+</body>
+</html>

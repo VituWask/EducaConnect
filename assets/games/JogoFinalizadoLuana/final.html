@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parabéns!</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="final-container">
+        <h1>🎉 Parabéns! 🎉</h1>
+        <p class="score-text">Você acertou <span id="final-score">0</span> de 10 perguntas! 🏆</p>
+
+        <div id="stars"></div>
+
+        <button onclick="restartQuiz()" id="restart-button">Jogar Novamente</button>
+        <button onclick="goToMenu()" id="menu-button">Voltar ao Menu</button>
+    </div>
+
+    <script>
+        function restartQuiz() {
+            window.location.href = "quiz.html";
+        }
+
+        function goToMenu() {
+            window.location.href = "menu.html";
+        }
+
+        window.onload = () => {
+            const score = localStorage.getItem('score') || 0;
+            document.getElementById('final-score').textContent = score;
+
+            // Mostrar estrelas de acordo com a pontuação
+            const starsContainer = document.getElementById('stars');
+            starsContainer.innerHTML = '';
+
+            for (let i = 0; i < score; i++) {
+                const star = document.createElement('span');
+                star.textContent = '⭐';
+                star.style.fontSize = '1.5rem';
+                star.style.margin = '5px';
+                starsContainer.appendChild(star);
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>A Aventura de Apollo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background-color: #333;
+      font-family: 'Press Start 2P', cursive;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    canvas {
+      background: transparent;
+      position: absolute;
+      z-index: 2;
+    }
+
+    #background, #gameBackground {
+      position: absolute;
+      width: 768px;
+      height: 368px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    #background {
+      z-index: 1;
+    }
+
+    #gameBackground {
+      z-index: 0;
+      display: none;
+    }
+
+    #answerBox {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 3;
+    }
+
+    input[type="text"] {
+      font-size: 16px;
+      padding: 10px;
+      width: 200px;
+      text-align: center;
+      font-family: 'Press Start 2P', cursive;
+      border: 2px solid #ccc;
+      background-color: black;
+      color: #fff;
+    }
+
+    .screen {
+      width: 768px;
+      height: 368px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(0, 0, 0, 0.85);
+      color: white;
+      font-size: 12px;
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      box-sizing: border-box;
+      z-index: 4;
+      border: 4px solid #ccc;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 12px;
+      font-family: 'Press Start 2P', cursive;
+      cursor: pointer;
+      background-color: black;
+      color: #fff;
+      border: 2px solid #ccc;
+    }
+
+    button:hover {
+      background-color: #555;
+    }
+  </style>
+</head>
+<body>
+  <div id="background">
+    <img src="https://images.steamusercontent.com/ugc/1908991191290015339/7F37F12C3C393936B11980F5E25C55D816240FDA/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true" width="768" height="368" />
+  </div>
+
+  <div id="gameBackground">
+    <img src="https://i.pinimg.com/originals/79/a9/2c/79a92c4f98f1027ddd94771f1a742942.gif" width="768" height="368" />
+  </div>
+
+  <div id="startScreen" class="screen" style="display: flex;">
+    <h1>A Aventura de Apollo</h1>
+    <p>Pressione "Iniciar" para começar a aventura!</p>
+    <button onclick="showIntro()">Iniciar</button>
+  </div>
+
+  <div id="introScreen" class="screen">
+    <p>És Apollo, um jovem gato bruxo em busca de um castelo em ruína esquecida pelo tempo...<br><br>
+    Em uma de suas buscas encontraste um num dia chuvoso. Em sua curiosidade entrou, e naquele momento foi o seu erro...<br><br>
+    Pois ativou inimigos que querem derrotá-lo.<br>
+    Sobreviva o máximo que conseguir... até ajuda chegar.</p>
+  </div>
+
+  <div id="gameOverScreen" class="screen">
+    <div id="gameOverText"></div>
+    <button onclick="restartGame()">Reiniciar</button>
+  </div>
+
+  <div id="answerBox">
+    <input type="text" id="answerInput" placeholder="Resposta" autocomplete="off" />
+  </div>
+
+  <canvas id="gameCanvas" width="768" height="368"></canvas>
+
+  <script>
+    const canvas = document.getElementById("gameCanvas");
+    const ctx = canvas.getContext("2d");
+    const answerInput = document.getElementById("answerInput");
+    const startScreen = document.getElementById("startScreen");
+    const introScreen = document.getElementById("introScreen");
+    const gameOverScreen = document.getElementById("gameOverScreen");
+    const gameOverText = document.getElementById("gameOverText");
+    const background = document.getElementById("background");
+    const gameBackground = document.getElementById("gameBackground");
+
+    let enemies = [];
+    let score = 0;
+    let kills = 0;
+    let round = 1;
+    let lives = 3;
+    let enemySpeed = 0.1;
+    let gameRunning = false;
+
+    const cube = { x: 384, y: 294, size: 110 };
+
+    function showIntro() {
+      startScreen.style.display = "none";
+      introScreen.style.display = "flex";
+      background.style.display = "none";
+      setTimeout(() => {
+        introScreen.style.display = "none";
+        gameRunning = true;
+        gameBackground.style.display = "block";
+        gameLoop();
+      }, 6000);
+    }
+
+    function restartGame() {
+      enemies = [];
+      score = 0;
+      kills = 0;
+      round = 1;
+      lives = 3;
+      enemySpeed = 0.1;
+      gameRunning = true;
+      gameOverScreen.style.display = "none";
+      gameLoop();
+    }
+
+    function getRandomNumber() {
+      return (round - 1) * 10 + Math.floor(Math.random() * 10);
+    }
+
+    function createEnemy(fromLeft = true) {
+      const a = getRandomNumber();
+      const b = getRandomNumber();
+      const isSum = Math.random() < 0.5;
+      const y = 260;
+      const width = 100;
+      const height = 100;
+      const x = fromLeft ? -width : canvas.width + width;
+      const overlapping = enemies.some(e => Math.abs(e.x - x) < width + 30 && Math.abs(e.y - y) < height);
+      if (overlapping) return null;
+      return { x, y, width, height, a, b, isSum, answered: false, direction: fromLeft ? 1 : -1 };
+    }
+
+    function drawCube() {
+      const img = new Image();
+      img.src = "https://i.imgur.com/DyvrjEF.gif";
+      ctx.drawImage(img, cube.x - cube.size / 2, cube.y - cube.size / 2, cube.size, cube.size);
+    }
+
+    function drawEnemy(e) {
+      const img = new Image();
+      img.src = e.isSum ? "https://i.imgur.com/n05yPlm.gif" : "https://i.imgur.com/2ePDvHY.gif";
+      const shouldFlip = (!e.isSum && e.direction === -1) || (e.isSum && e.direction === 1);
+
+      if (shouldFlip) {
+        ctx.save();
+        ctx.scale(-1, 1);
+        ctx.drawImage(img, -e.x - e.width, e.y, e.width, e.height);
+        ctx.restore();
+      } else {
+        ctx.drawImage(img, e.x, e.y, e.width, e.height);
+      }
+
+      ctx.fillStyle = "white";
+      ctx.font = "12px 'Press Start 2P'";
+      const text = `${e.a} ${e.isSum ? "+" : "-"} ${e.b}`;
+      const textWidth = ctx.measureText(text).width;
+      ctx.fillText(text, e.x + e.width / 2 - textWidth / 2, e.y - 8);
+    }
+
+    function checkCollision(e) {
+      const c = cube;
+      return (
+        e.x + e.width > c.x - c.size / 2 &&
+        e.x < c.x + c.size / 2 &&
+        e.y + e.height > c.y - c.size / 2 &&
+        e.y < c.y + c.size / 2
+      );
+    }
+
+    function update() {
+      if (!gameRunning) return;
+      enemies.forEach(e => e.x += enemySpeed * e.direction);
+      enemies.forEach(e => {
+        if (!e.answered && checkCollision(e)) {
+          e.answered = true;
+          lives--;
+          if (lives <= 0) showGameOver();
+        }
+      });
+      enemies = enemies.filter(e => (e.direction === 1 && e.x < canvas.width + 50 || e.direction === -1 && e.x > -50) && !e.answered);
+      const active = enemies.filter(e => !e.answered);
+      if (active.length < 3) {
+        const dirs = [true, false];
+        for (let i = 0; i < 3 - active.length; i++) {
+          const newE = createEnemy(dirs[i % 2]);
+          if (newE) enemies.push(newE);
+        }
+      }
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      drawCube();
+      enemies.forEach(drawEnemy);
+      ctx.fillStyle = "white";
+      ctx.font = "12px 'Press Start 2P'";
+      ctx.fillText(`Vidas: ${lives}  Pontos: ${score}  Rodada: ${round}  Mortes: ${kills}`, 10, 20);
+    }
+
+    function gameLoop() {
+      if (gameRunning) {
+        update();
+        draw();
+        requestAnimationFrame(gameLoop);
+      }
+    }
+
+    function showGameOver() {
+      gameRunning = false;
+      gameOverText.innerHTML = `<p>VOCÊ MORREU</p><p>Rodada: ${round}</p><p>Inimigos eliminados: ${kills}</p>`;
+      gameOverScreen.style.display = 'flex';
+    }
+
+    answerInput.addEventListener("keydown", e => {
+      if (e.key === "Enter" && gameRunning) {
+        const ans = parseInt(answerInput.value);
+        for (const e of enemies) {
+          if (!e.answered) {
+            const correct = e.isSum ? e.a + e.b : e.a - e.b;
+            if (ans === correct) {
+              e.answered = true;
+              score++;
+              kills++;
+              enemySpeed += 0.1;
+              if (kills % 10 === 0) round++;
+              break;
+            }
+          }
+        }
+        answerInput.value = "";
+      }
+    });
+
+    answerInput.focus();
+  </script>
+</body>
+</html>

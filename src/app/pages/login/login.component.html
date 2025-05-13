@@ -1,22 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-
 <header>
-<body>
-    <div class="page">
-        <form method="POST" class="formLogin">
-            <h1>Login</h1>
-            <p>Digite os seus dados de acesso no campo abaixo.</p>
-            <label for="email">E-mail</label>
-            <input type="email" placeholder="Digite seu e-mail" autofocus="true" />
-            <label for="password">Senha</label>
-            <input type="password" placeholder="Digite seu e-mail" />
-            <a href="/">Esqueci minha senha</a>
-            <button [routerLink]="'/main/inicio'" class="btn">Acessar</button>
+  <div class="opacity"></div>
+  <div class="page">
+    <form method="POST" class="formLogin">
+      <h1>Login</h1>
+      <p>Digite os seus dados de acesso no campo abaixo.</p>
 
-        </form>
-    </div>
+      <label for="email">E-mail</label>
+      <input type="email" placeholder="Digite seu e-mail" autofocus />
 
-</body>
+      <label for="password">Senha</label>
+      <input type="password" placeholder="Digite sua senha" />
+
+      <a href="/">Esqueci minha senha</a>
+
+      <button [routerLink]="'/main/inicio'" class="btn">Acessar</button>
+    </form>
+  </div>
 </header>
-</html>

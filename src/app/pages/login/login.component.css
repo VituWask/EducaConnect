@@ -1,109 +1,132 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;900&display=swap');
 
-header{
-  width: 100%;
-  height: 100vh;
-  background-image: url(../../../assets/images/background/background.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment:fixed;
-  background-position: top;
+:host {
+  display: block;
   position: relative;
-}
-body {
-    font-family: 'Inter', sans-serif;
-    margin: 0;
-    padding: 0;
-    color: #023047
 }
 
 .page {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
-    width: 100%;
-    height: 100vh;
-    background: linear-gradient(to left, #000428 , #00498a);
-    opacity: 0.8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url(../../../assets/images/background/background.jpg);
+  background-size: cover;
+  background-position: top;
+  background-attachment: fixed;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Gradiente de overlay com opacidade */
+.page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to left, #000428, #1d8df0);
+  opacity: 0.8;
+  z-index: 1;
 }
 
 .formLogin {
-    display: flex;
-    flex-direction: column;
-    background-color: #fff;
-    border-radius: 7px;
-    padding: 40px;
-    box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.4);
-    gap: 5px
-}
-
-.areaLogin img {
-    width: 420px;
+  position: relative; /* Garante que ficará acima do overlay */
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 7px;
+  padding: 40px;
+  box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.4);
+  gap: 5px;
+  max-width: 400px;
+  width: 100%;
 }
 
 .formLogin h1 {
-    padding: 0;
-    margin: 0;
-    font-weight: 500;
-    font-size: 2.3em;
+  font-weight: 500;
+  font-size: 2.3em;
+  margin: 0;
 }
 
 .formLogin p {
-    display: inline-block;
-    font-size: 14px;
-    color: #666;
-    margin-bottom: 25px;
-}
-
-.formLogin input,button {
-    padding: 15px;
-    font-size: 14px;
-    border: 1px solid #ccc;
-    margin-bottom: 20px;
-    margin-top: 5px;
-    border-radius: 4px;
-    transition: all linear 160ms;
-    outline: none;
-}
-
-
-.formLogin input:focus {
-    border: 1px solid rgb(66, 151, 255);
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 25px;
 }
 
 .formLogin label {
-    font-size: 14px;
-    font-weight: 600;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.formLogin input,
+.formLogin button {
+  padding: 15px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  margin-top: 5px;
+  outline: none;
+  transition: all 160ms linear;
+}
+
+.formLogin input:focus {
+  border: 1px solid rgb(66, 151, 255);
 }
 
 .formLogin a {
-    display: inline-block;
-    margin-bottom: 20px;
-    font-size: 13px;
-    color: #555;
-    transition: all linear 160ms;
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 20px;
+  transition: all 160ms linear;
 }
 
 .formLogin a:hover {
-    color: rgb(66, 151, 255);
+  color: rgb(66, 151, 255);
 }
 
 .btn {
-    background-color: rgb(66, 151, 255);
-    color: #fff;
-    font-size: 14px;
-    font-weight: 600;
-    border: none !important;
-    transition: all linear 160ms;
-    cursor: pointer;
-    margin: 0 !important;
-
+  background-color: rgb(66, 151, 255);
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: transform 160ms linear;
 }
 
 .btn:hover {
-    transform: scale(1.05);
-    background-color: rgb(66, 151, 255);
+  transform: scale(1.05);
+  background-color: rgb(66, 151, 255);
+}
 
+/* Responsividade */
+@media (max-width: 768px) {
+  .formLogin {
+    padding: 25px;
+    max-width: 90%;
+  }
+
+  .formLogin h1 {
+    font-size: 1.8em;
+  }
+
+  .formLogin input,
+  .formLogin button {
+    font-size: 16px;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .formLogin {
+    padding: 20px;
+  }
+
+  .formLogin h1 {
+    font-size: 1.5em;
+  }
 }

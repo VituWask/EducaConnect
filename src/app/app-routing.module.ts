@@ -13,6 +13,7 @@ import { ProfessorAlunosComponent } from './pages/main-page/professor-sub/profes
 import { ProfessorAtividadeComponent } from './pages/main-page/professor-sub/professor-atividade/professor-atividade.component';
 import { ProfessorSuporteComponent } from './pages/main-page/professor-sub/professor-suporte/professor-suporte.component';
 import { ProfessorPerfilComponent } from './pages/main-page/professor-sub/professor-perfil/professor-perfil.component';
+import { ResponsavelComponent } from './pages/main-page/responsavel/responsavel.component';
 import { GameMainComponent } from './pages/main-page/game/main/game-main/game-main.component';
 import { Game1Component } from './pages/main-page/game/game-1/game-1.component';
 import { Game2Component } from './pages/main-page/game/game-2/game-2.component';
@@ -39,6 +40,7 @@ const routes: Routes = [
     {path : 'game8', component: Game8Component},
     {path : 'game9', component: Game9Component},
     {path : 'inicio', component: AlunoInicioComponent},
+    {path : 'responsavel', component: ResponsavelComponent},
     {path: 'agenda', component: AlunoAgendaComponent},
     {path: 'desempenho', component: AlunoDesempenhoComponent},
     {path: 'rendimento', component: AlunoRendimentoComponent},
